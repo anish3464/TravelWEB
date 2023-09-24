@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: var(--transition);
+  }
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('main.jpeg') ;
+    font-style: poppins;
+
+}
+nav{
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 20px;
+}
+#logo{
+    width:60px;
+    height: 60px;
+    padding: 2px;
+}
+h1{
+    color: white;
+    font-family: poppins;
+    
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    float: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 0px 0px 88px;
+    text-decoration: none;
+    font-size: 20px;
+    font-style: Poppins;
+   
+  }
+  button{
+    position: relative;
+    color: #FFF; 
+    width:120px;
+    height: 12px;
+    padding: 20px 30px ;
+    background: transparent;
+    border-radius: 32px; 
+    border: 1px #ffffff solid; 
+    display:flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-family: poppins;
+    margin-left:50px ;
+    text-decoration: none;
+  }
+  button:hover{
+  border-color: #0d4bc7;
+  }
+ #globe{
+    padding: 14px 16px 0px 8px;
+    width: 42px;
+height: 32px;
+ }
+  form{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  input{
+    border: 2px solid #ffffff;
+    background: transparent;
+    width: 356px;
+    height: 38px;
+    border-radius: 32px;
+    padding-left: 100px;
+    outline: none;
+    font-size: 15px;
+    color: white;
+  }
+  .box {
+    position: absolute;
+    background: rgba(163, 72, 72, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 590px;
+    margin-top: 90px;
+    width:900px;
+    height:350px;
+  }
+  
+  img {
+    width: 450px;
+    height: 350px;
+    background-repeat: no-repeat;
+  }
+  
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+    font-style:Poppins;
+    color: #FFF;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.5%;
+    margin: 20px;
+  }
+  h5{
+    padding-bottom:20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  p{
+    font-size: 18px;
+  }

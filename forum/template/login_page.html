@@ -1,0 +1,83 @@
+<html>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family:Poppins;
+                background-image:url('/static/balloon.png');
+                background-size:cover;
+    
+            }button{
+                width: 20%;
+                margin-top:20px;
+                padding: 15px;
+                border: 2px solid black;
+                box-sizing: border-box;
+                border-radius:32px;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{       
+                padding:172px 430px 0px 430px;   
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                gap:32px;
+
+            }
+            input[type=email],input[type=password]{
+                width: 30%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid black;
+                box-sizing: border-box;
+                border-radius:32px;
+            }
+            button:hover{
+                border-color:aquablue;
+                opacity:0.7;
+
+            }
+            .container{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                border-radius:50px;
+                border:2px solid black;
+                padding-bottom:20px;
+            }
+            img{
+                width:6%;
+                padding-bottom:40px;
+
+            }  
+        </style>
+    </head>
+    <body>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <center><h1>Log in </h1></center>
+                <div class="imgcontainer">
+                    <img src="/static/logo.png" alt="Avatar" class="avatar">
+                </div>
+                <label for ='email'><b>UserEmail :  </b></label>
+                <input type="email" placeholder="Enter email" name="email" float="right"  required><br>  
+                <label for='password'><b>Password : </b></label>
+                <input type="password" placeholder="Enter Password" name="password" required><br>  
+                <button type="submit"><b>Login</b></button><br>     
+                Don't have an accounct? <a href="http://localhost:8000/signup/"> register </a>
+            </div></center> 
+        </form>
+    </body>
+</html>

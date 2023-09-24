@@ -1,0 +1,104 @@
+<html>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                background-image:url('/static/balloon.png');
+                background-size:cover;
+                font-family:Poppins;
+                margin:0;
+                padding-left:550px;
+            }
+            h1{
+             font-size:20;
+            }
+            button{
+                border: 2px solid black;
+                border-radius:32px;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                float: center;
+                font-size: 15px;
+                margin:20px;
+                
+            }
+            label{
+                font-size: 20px;
+                font-family:Poppins;
+            }
+            form{
+             
+                width:700px;
+                position:relative;
+                padding:120px 72px 143px 90px;
+
+            }
+            input[type=email],input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 18px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid black;
+                box-sizing: border-box;
+                border-radius:32px;
+            }
+            input[type=radio]{
+                height: 18px;
+                width: 18px;
+                margin: 18px 0px;
+                padding: 12px 20px;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+                border-radius:50px;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img{
+                width: 15%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        
+        {% load static %}
+        <form action="#" method="post">
+            {% csrf_token %}
+            
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="/static/logo.png"></img>
+                </div>
+                <label for='first_name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='first_name' required><br>
+		        <label for='last_name'><b>Last Name :</b></label>
+		        <input type='text' placeholder='Enter your last name' name='last_name' required><br>
+		        <label for='sex' ><b>Sex : </b></label>
+		        <input type='radio' name='sex' value='male' required>
+		        <label ><b>Male</b></label>
+		        <input type='radio' name='sex' value='female' required>
+		        <label ><b>Female</b></label><br>
+            	<label for ='email'><b>Email Id :  </b></label>
+            	<input type="email" placeholder="Enter email" name="email" float="right"  required><br>  
+            	<label for='password'><b>Password : </b></label>
+            	<input type="text" placeholder="Enter Password" name="password" required><br>  
+            	<button type="password"><b>Signup</b></button><br>     
+            	Already have an accounct? <a href="http://localhost:8000/login/"> Login </a>
+            </div></center>
+        </form>
+    </body>
+</html>
