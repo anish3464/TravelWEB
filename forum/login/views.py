@@ -1,24 +1,15 @@
 from django.shortcuts import render
-import mysql.connector as sql
-em=''
-pwd=''
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+
 # Create your views here.
 def loginaction(request):
-    global em,pwd
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="asnasnasn",database='website')
-        cursor=m.cursor()
-        d=request.POST
-        for key,value in d.items():
-            if key=="email":
-                em=value
-            if key=="password":
-                pwd=value
-        
-        c="select * from users where email='{}' and password='{}'".format(em,pwd)
-        cursor.execute(c)
-        t=tuple(cursor.fetchall())
-        if t==():
+        email = request.POST["email"]
+        passw = request.POST["password"]
+        print(request.POST)
+        user = authenticate(username=email, password=passw)
+        if not user:
             return render(request,'error.html')
         else:
             return render(request,"welcome.html")
