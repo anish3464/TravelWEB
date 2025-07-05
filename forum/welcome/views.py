@@ -9,7 +9,7 @@ post=''
 def post(request):
     global name,post
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="asnasnasn",database='website')
+        m=sql.connect(host="localhost",user="root",passwd=os.getenv('DB_PASS'),database='website')
         cursor=m.cursor()
         d=request.POST
         for key,value in d.items():
