@@ -1,35 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>landing page</title>
-  <link rel="stylesheet" href="/static/styless.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <nav>
-    <a href="http://localhost:8000/welcome/"><img id="logo" src="/static/logo.png" alt=""></a>
-    <h1>TRAVELTROOPTALK</h1>
-    <div class="navbar">
-      <a class="active" href="http://localhost:8000/welcome/">Home</a>
-      <a href="#about">About Us</a>
-      <a href="http://localhost:8000/community/">Communities <img id="globe" src="/static/Globe.png" alt=""></a>
+{% block title %}TravelTroopTalk - Your Travel Community{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to TravelTroopTalk</h1>
+            <p class="hero-subtitle">Connect with fellow travelers, share your adventures, and discover amazing destinations around the world</p>
+            <div class="hero-cta">
+                <a href="/community/" class="btn btn-white">
+                    <i class="fas fa-users"></i> Join Community
+                </a>
+                <a href="#featured" class="btn btn-outline-white">
+                    <i class="fas fa-compass"></i> Explore Stories
+                </a>
+            </div>
+        </div>
     </div>
-    <button><a href="http://localhost:8000/signup/"> Sign up </a></button>
-    <button><a href="http://localhost:8000/login/"> Log in </a></button>
-    </nav>
-    <form >
-      <input type="text" name="search" id="search" placeholder="Search">
-    </form>
-    <div class="box">
-      <div class="image">
-        <img src="/static/box.jpeg" alt="">
-      </div>
-      <div class="text">
-        <h5>Where to catch Local bus for Ooty in Chennai?</h5>
-        <p>If you're planning a journey from Chennai to the picturesque hill station of Ooty, your adventure begins with finding the right local buses in Chennai. Chennai, a bustling metropolis, offers various transportation options to kickstart your journey to the serene hills of Ooty.</p>
-      </div>
+</section>
+
+<div class="container">
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Travelers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5K+</span>
+                <span class="stat-label">Stories Shared</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Community Support</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-section" id="featured">
+        <h2 class="section-title">Featured Travel Story</h2>
+        <div class="featured-card">
+            <div class="featured-content">
+                {% load static %}
+                <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ooty Travel" class="featured-image">
+                <div class="featured-text">
+                    <h3 class="featured-title">Where to catch Local bus for Ooty in Chennai?</h3>
+                    <p class="featured-description">
+                        If you're planning a journey from Chennai to the picturesque hill station of Ooty, your adventure begins with finding the right local buses in Chennai. Chennai, a bustling metropolis, offers various transportation options to kickstart your journey to the serene hills of Ooty. Discover the best routes, timings, and insider tips from fellow travelers who have made this beautiful journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2 class="section-title">Why Choose TravelTroopTalk?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="feature-title">Connect with Travelers</h3>
+                <p class="feature-description">Meet like-minded travelers, share experiences, and build lasting friendships with people who share your passion for exploration.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3 class="feature-title">Discover Hidden Gems</h3>
+                <p class="feature-description">Get insider tips and recommendations for off-the-beaten-path destinations that only locals and experienced travelers know about.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h3 class="feature-title">Ask & Get Answers</h3>
+                <p class="feature-description">Have travel questions? Our community is here to help with real experiences, practical advice, and honest recommendations.</p>
+            </div>
+        </div>
+    </section>
 </div>
-</body>
-</html>
+{% endblock %}

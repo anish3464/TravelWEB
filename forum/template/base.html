@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TravelTroopTalk - Connect with Fellow Travelers{% endblock %}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% block navbar %}
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/welcome/" class="navbar-brand">
+                <img src="{% static 'logo.png' %}" alt="TravelTroopTalk" class="navbar-logo">
+                <h1 class="navbar-title">TravelTroopTalk</h1>
+            </a>
+            
+            <ul class="navbar-nav">
+                <li><a href="/welcome/" class="{% if request.resolver_match.url_name == 'welcome' %}active{% endif %}">
+                    <i class="fas fa-home"></i> Home
+                </a></li>
+                <li><a href="#about">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a></li>
+                <li><a href="/community/" class="{% if request.resolver_match.url_name == 'community' %}active{% endif %}">
+                    <i class="fas fa-users"></i> Communities
+                </a></li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="/signup/" class="btn btn-outline">Sign Up</a>
+                <a href="/login/" class="btn btn-primary">Log In</a>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    {% endblock %}
+    
+    {% block search %}
+    <div class="container">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search destinations, tips, or travel stories...">
+        </div>
+    </div>
+    {% endblock %}
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% block footer %}
+    <footer style="background-color: var(--text-primary); color: white; padding: var(--spacing-2xl) 0; margin-top: var(--spacing-2xl);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                <div>
+                    <h3 style="margin-bottom: var(--spacing-md); color: white;">TravelTroopTalk</h3>
+                    <p style="color: #94a3b8; margin-bottom: 0;">Connect with fellow travelers, share experiences, and discover amazing destinations around the world.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md); color: white;">Quick Links</h4>
+                    <ul style="list-style: none; color: #94a3b8;">
+                        <li style="margin-bottom: var(--spacing-sm);"><a href="/welcome/" style="color: #94a3b8;">Home</a></li>
+                        <li style="margin-bottom: var(--spacing-sm);"><a href="/community/" style="color: #94a3b8;">Communities</a></li>
+                        <li style="margin-bottom: var(--spacing-sm);"><a href="#" style="color: #94a3b8;">About Us</a></li>
+                        <li style="margin-bottom: var(--spacing-sm);"><a href="#" style="color: #94a3b8;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md); color: white;">Follow Us</h4>
+                    <div style="display: flex; gap: var(--spacing-md);">
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #374151; padding-top: var(--spacing-lg); text-align: center; color: #94a3b8;">
+                <p style="margin: 0;">&copy; 2024 TravelTroopTalk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
